@@ -7,11 +7,35 @@
     <button class="tigers">Tiger</button>
 
     <script>
-
+      //event listener to page
       document.addEventListener('click', function(event) {
+        //node to use for all paragraphs
         var node = document.createElement('p');
-        var txt = document.createTextNode("Towson");
-        node.appendChild(txt);
+        //target the towson button by its class
+        if(event.target.className == "towson") {
+          var txt = document.createTextNode("Towson");
+          node.appendChild(txt);
+          node.classList.add('tu');
+
+          var element = document.getElementsByClassName('bengal');
+
+          //delete the tiger button add ons
+          while(element.length > 0) {
+            element[0].parentNode.removeChild(element[0]);
+          }
+          //target the tigers button by class
+        } else if( event.target.className == "tigers") {
+          var txt = document.createTextNode('Tigers');
+          node.appendChild(txt);
+          node.classList.add('bengal');
+
+          var elements = document.getElementsByClassName('tu');
+
+          //delete the towson add ons from the towson button
+          while(elements.length > 0) {
+            elements[0].parentNode.removeChild(elements[0]);
+          }
+        }
         document.body.appendChild(node);
       });
     </script>
