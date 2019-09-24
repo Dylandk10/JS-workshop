@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title> Js WorkShop </title>
+  <body>
+    <button class="towson">Towson</button>
+    <button class="tigers">Tiger</button>
+
+    <script>
+
+      document.addEventListener('click', function(event) {
+        var node = document.createElement('p');
+        var txt = document.createTextNode("Towson");
+        node.appendChild(txt);
+        document.body.appendChild(node);
+      });
+    </script>
+  </body>
+</head>
+</html>
